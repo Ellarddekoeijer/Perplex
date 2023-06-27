@@ -1,1 +1,0 @@
-import{_ as e,o,c as s,r as n}from"./entry.b814b036.js";const r={name:"WithContentWidth"},a={class:"mx-auto w-full px-3 lg:w-10/12 2xl:w-8/12"};function c(t,l,i,_,d,p){return o(),s("div",a,[n(t.$slots,"default")])}const h=e(r,[["render",c]]);export{h as W};

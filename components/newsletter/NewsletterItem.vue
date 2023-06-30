@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex w-96 flex-col space-y-12">
+  <div class="flex w-64 sm:w-96 flex-col space-y-12">
     <div class="relative h-72 w-full">
       <img class="h-full w-full object-cover object-center drop-shadow" :src="url" :alt="alt">
       <CTA class="absolute bottom-0 right-0 text-base " to="/example">

@@ -2,8 +2,8 @@
 import { useWindowSize } from '@vueuse/core'
 import WithContentWidth from '~/components/hoc/WithContentWidth.vue'
 const { width } = useWindowSize()
-const newsLetterItemWidthInRem = 27
-const itemsPerScroll = width.value > 1000 ? 3 : 1
+const newsLetterItemWidthInRem = width.value > 640 ? 27 : 17
+const itemsPerScroll = width.value > 1000 ? 2 : 1
 
 const query = gql`
           query {
@@ -40,7 +40,7 @@ function prev () {
       </div>
     </WithContentWidth>
     <!-- To make the component align with the WithContentWidth HOC we have to set its margin left manually -->
-    <div class="ml-3 flex items-center overflow-hidden px-3 lg:ml-1/12 2xl:ml-2/12">
+    <div class="flex items-center overflow-hidden px-3 lg:ml-1/12 2xl:ml-2/12">
       <button class="absolute z-20 h-16 w-8 bg-black bg-opacity-60" @click="prev">
         <font-awesome-icon class="text-white" :icon="['fa', 'chevron-left']" />
       </button>
@@ -48,7 +48,7 @@ function prev () {
         <font-awesome-icon class="text-white" :icon="['fa', 'chevron-right']" />
       </button>
 
-      <div class="grid w-full grid-flow-col items-start gap-x-12 transition duration-300 ease-in-out" :style="`transform: translateX(-${selectedIndex * newsLetterItemWidthInRem}rem)`">
+      <div class="grid w-full gap-x-4 grid-flow-col items-start sm:gap-x-12 transition duration-300 ease-in-out" :style="`transform: translateX(-${selectedIndex * newsLetterItemWidthInRem}rem)`">
         <NewsletterItem
           v-for="newsletter in newsletters"
           :key="newsletter.id"
